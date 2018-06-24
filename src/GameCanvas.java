@@ -40,8 +40,8 @@ public class GameCanvas extends JPanel {
                 random.nextInt(1025),
                 random.nextInt(601),
                 this.loadImage("resources/images/circle.png"),
-                random.nextInt(10),
-                random.nextInt(10)
+                2,
+                2
         );
         this.player = new Player(
                 random.nextInt(1025),
