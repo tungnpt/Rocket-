@@ -41,12 +41,24 @@ public class Enemy {
         int subX = this.x + _velocityX;
         int subY = this.y + _velocityY;
         Double pytagoX = Math.sqrt(Math.pow(this.x+_velocityX-player.x,2) + Math.pow(this.y-player.y,2));
+        double minPytago = pytagoX;
         Double pytagoY = Math.sqrt(Math.pow(this.x-player.x,2) + Math.pow(this.y+_velocityY-player.y,2));
-        //Double minPytago = pytagoX<pytagoY?pytagoX:pytagoY;
-        if(pytagoX<=pytagoY){
+        if(pytagoY<minPytago){
+            minPytago=pytagoY;
+        }
+        Double pytagoXY = Math.sqrt(Math.pow(this.x+_velocityX-player.x,2)+ Math.pow(this.y+_velocityY-player.y,2));
+        if(pytagoXY<minPytago){
+            minPytago=pytagoXY;
+        }
+        if(pytagoX==minPytago){
             this.x += _velocityX;
         }
-        else {
+        else if (pytagoY==minPytago) {
+            this.y+=_velocityY;
+        }
+        else
+        {
+            this.x += _velocityX;
             this.y+=_velocityY;
         }
 
