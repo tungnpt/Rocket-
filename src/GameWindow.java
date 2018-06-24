@@ -31,6 +31,7 @@ public class GameWindow extends JFrame {
             @Override
             public void keyTyped(KeyEvent e) {
             }
+
             @Override
             public void keyPressed(KeyEvent e) {
                 if (e.getKeyCode() == KeyEvent.VK_LEFT) {
@@ -46,6 +47,7 @@ public class GameWindow extends JFrame {
                     gameCanvas.player.y += 8;
                 }
             }
+
             @Override
             public void keyReleased(KeyEvent e) {
             }
